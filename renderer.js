@@ -67,7 +67,12 @@ document.body.addEventListener("keydown", function(e) {
 		case e.key == '4':
 			creatingBall(30, 40)
 			break
-
+		case e.key == '5':
+			creatingBall(50, 60)
+			break
+		case e.key == '6':
+			creatingBall(60, 70)
+			break
 		default:
 			break
 	}
@@ -136,28 +141,38 @@ function creatingBall (minSize, maxSize) {
 //Composite.add(world, whiteHoll);
 const small_stack = Composites.stack(0.3 * w, 0.7 * h, 3, 5, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
-	frictionStatic: 0.1
+	friction: 0
 	});
 });
 
 const low_middle_stack = Composites.stack(0.4 * w, 0.6 * h, 3, 10, 0, 0, function(x, y) {
-	return Bodies.rectangle(x, y, 10, 10);
+	return Bodies.rectangle(x, y, 10, 10, {
+	friction: 0
+	});
 });
 
 const middle_stack = Composites.stack(0.5 * w, 0.6 * h, 3, 15, 0, 0, function(x, y) {
-	return Bodies.rectangle(x, y, 10, 10);
+	return Bodies.rectangle(x, y, 10, 10, {
+	friction: 0
+	});
 });
 
 const height_middle_stack = Composites.stack(0.6 * w, 0.6 * h, 3, 20, 0, 0, function(x, y) {
-	return Bodies.rectangle(x, y, 10, 10);
+	return Bodies.rectangle(x, y, 10, 10, {
+	friction: 0
+	});
 });
 
 const big_stack = Composites.stack(0.7 * w, 0.6 * h, 3, 25, 0, 0, function(x, y) {
-	return Bodies.rectangle(x, y, 10, 10);
+	return Bodies.rectangle(x, y, 10, 10, {
+	friction: 0
+	});
 });
 
 const height_big_stack = Composites.stack(0.8 * w, 0.5 * h, 3, 30, 0, 0, function(x, y) {
-	return Bodies.rectangle(x, y, 10, 10);
+	return Bodies.rectangle(x, y, 10, 10, {
+	friction: 0
+	});
 });
 //const pyramid = Composites.pyramid(0.02 * w, 0.75 * h, 7, 6, 0, 0, function(x, y) {
 //  return Bodies.rectangle(x, y, 0.01 * w, 0.01 * w);
@@ -193,9 +208,9 @@ Composite.add(world, [
 ])
 
 Composite.add(world, [
-  Bodies.rectangle(0.05 * w, 0.1 * h, 1 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.03, render: { fillStyle: '#ffffff' } }),
-  Bodies.rectangle(0.95 * w, 0.4 * h, 1.5 * w, 5, { isStatic: true, friction: 0, angle: -Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
-  Bodies.rectangle(0.05 * w, 0.7 * h, 0.4 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(0.05 * w, 0.1 * h, 1 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.05, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(0.95 * w, 0.4 * h, 1.2 * w, 5, { isStatic: true, friction: 0, angle: -Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(0.05 * w, 0.8 * h, 0.5 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
 
 	//Bodies.circle(0.4 * w, 0.45 * h, 40, { friction: 0, isStatic: true,restitution: 1, density: 0.001, render: {fillStyle: '#ffffff'} }),
 	//Bodies.circle(0.35 * w, 0.50 * h, 40, { friction: 0, isStatic: true,restitution: 1, density: 0.001, render: {fillStyle: '#ffffff'} }),
