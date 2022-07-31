@@ -18,8 +18,8 @@ const engine = Engine.create(),
 
 const canvas = document.getElementById("blackboard")
 
-  const width = window.innerWidth
-  const height = window.innerHeight
+  const w = window.innerWidth
+  const h = window.innerHeight
 
   // create renderer
   const render = Render.create({
@@ -27,8 +27,8 @@ const canvas = document.getElementById("blackboard")
     engine: engine,
     canvas: canvas,
     options: {
-      width: width,
-      height: height,
+      width: w,
+      height: h,
       //showAngleIndicator: true,
       wireframes: false,
       background: '#000000',
@@ -47,7 +47,7 @@ const runner = Runner.create();
 Runner.run(runner, engine);
 
 // add bodies
-const stack = Composites.stack(200, 20, 20, 10, 0, 0, function(x, y) {
+const stack = Composites.stack(0.2 * w, 20, 20, 10, 0, 0, function(x, y) {
 	return Bodies.circle(x, y, Common.random(1, 10), { friction: 0.00001, restitution: 0.5, density: 0.001 });
 });
 
