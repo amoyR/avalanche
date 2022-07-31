@@ -79,8 +79,8 @@ document.body.addEventListener("keydown", function(e) {
 })  
 
 function creatingBall (minSize, maxSize) {
-	const ball_stack = Composites.stack(0.2 * w, 0, 1, 1, 0, 0, function(x, y) {
-		return Bodies.circle(x, y, Common.random(minSize, maxSize), { friction: 0.00001, restitution: 1, density: 0.001 });
+	const ball_stack = Composites.stack(0.2 * w, -10, 1, 1, 0, 0, function(x, y) {
+		return Bodies.circle(x, y, Common.random(minSize, maxSize), { friction: 0, restitution: 1, density: 0.001 });
 	});
 	Composite.add(world, ball_stack);
 }
@@ -139,31 +139,31 @@ function creatingBall (minSize, maxSize) {
 //})
 
 //Composite.add(world, whiteHoll);
-const small_stack = Composites.stack(0.3 * w, 0.7 * h, 3, 5, 0, 0, function(x, y) {
+const small_stack = Composites.stack(0.3 * w, 0.8 * h, 3, 5, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
 	friction: 0
 	});
 });
 
-const low_middle_stack = Composites.stack(0.4 * w, 0.6 * h, 3, 10, 0, 0, function(x, y) {
+const low_middle_stack = Composites.stack(0.4 * w, 0.8 * h, 3, 7, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
 	friction: 0
 	});
 });
 
-const middle_stack = Composites.stack(0.5 * w, 0.6 * h, 3, 15, 0, 0, function(x, y) {
+const middle_stack = Composites.stack(0.5 * w, 0.8 * h, 3, 10, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
 	friction: 0
 	});
 });
 
-const height_middle_stack = Composites.stack(0.6 * w, 0.6 * h, 3, 20, 0, 0, function(x, y) {
+const height_middle_stack = Composites.stack(0.6 * w, 0.7 * h, 3, 15, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
 	friction: 0
 	});
 });
 
-const big_stack = Composites.stack(0.7 * w, 0.6 * h, 3, 25, 0, 0, function(x, y) {
+const big_stack = Composites.stack(0.7 * w, 0.6 * h, 3, 20, 0, 0, function(x, y) {
 	return Bodies.rectangle(x, y, 10, 10, {
 	friction: 0
 	});
@@ -208,9 +208,8 @@ Composite.add(world, [
 ])
 
 Composite.add(world, [
-  Bodies.rectangle(0.05 * w, 0.1 * h, 1 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.05, render: { fillStyle: '#ffffff' } }),
-  Bodies.rectangle(0.95 * w, 0.4 * h, 1.2 * w, 5, { isStatic: true, friction: 0, angle: -Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
-  Bodies.rectangle(0.05 * w, 0.8 * h, 0.5 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(0.3 * w, 0.2 * h, 0.3 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.05, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(0.5 * w, 0.6 * h, 0.3 * w, 5, { isStatic: true, friction: 0, angle: -Math.PI * 0.04, render: { fillStyle: '#ffffff' } }),
 
 	//Bodies.circle(0.4 * w, 0.45 * h, 40, { friction: 0, isStatic: true,restitution: 1, density: 0.001, render: {fillStyle: '#ffffff'} }),
 	//Bodies.circle(0.35 * w, 0.50 * h, 40, { friction: 0, isStatic: true,restitution: 1, density: 0.001, render: {fillStyle: '#ffffff'} }),
@@ -221,13 +220,13 @@ Composite.add(world, [
   //Bodies.rectangle(0.75 * w, 0.9 * h, 0.3 * w, 5, { isStatic: true, friction: 0, angle: Math.PI * 0.05, render: { fillStyle: '#ffffff' } }),
 
   //wall
-  Bodies.rectangle(w / 2, h, w, 10, { isStatic: true, render: { fillStyle: '#060a19' } }),
-  Bodies.rectangle(5, h / 2 , 10, h, { isStatic: true, render: { fillStyle: '#060a19' } }),
-  Bodies.rectangle(w - 5, h / 2, 10, h, { isStatic: true, render: { fillStyle: '#060a19' } }),
+  Bodies.rectangle(w / 2, h, w, 10, { isStatic: true, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(5, h / 2 , 10, h, { isStatic: true, render: { fillStyle: '#ffffff' } }),
+  Bodies.rectangle(w - 5, h / 2, 10, h, { isStatic: true, render: { fillStyle: '#ffffff' } }),
   //wall
-  //Bodies.rectangle(0, height, width, 20, { isStatic: true,render: { fillStyle: '#060a19' } }),
-  //Bodies.rectangle(340, 580, 500, 20, { isStatic: true,render: { fillStyle: '#060a19' } }),
-  //Bodies.rectangle(340, 580, 500, 20, { isStatic: true,render: { fillStyle: '#060a19' } })
+  //Bodies.rectangle(0, height, width, 20, { isStatic: true,render: { fillStyle: '#ffffff' } }),
+  //Bodies.rectangle(340, 580, 500, 20, { isStatic: true,render: { fillStyle: '#ffffff' } }),
+  //Bodies.rectangle(340, 580, 500, 20, { isStatic: true,render: { fillStyle: '#ffffff' } })
 
 ]);
 
